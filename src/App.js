@@ -1,14 +1,8 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
-import {
-  BrowserRouter,
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
-
-import Staff from './Staff';
-import Student from './Student';
+import Login from "./task3/Login";
+import Register from "./task3/Register";
 
 function App() {
   return (
@@ -17,23 +11,22 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to='/student'>Student</Link>
+              <Link to="/Register">Register</Link>
             </li>
             <li>
-              <Link to='/staff'>Staff</Link>
+              <Link to="/Login">Login</Link>
             </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path='/student' component={Student} />
+          <Route path="/Register" component={Register} />
 
-          <Route path='/staff' component={Staff} />
-
+          <Route path="/Login" component={Login} />
         </Switch>
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
